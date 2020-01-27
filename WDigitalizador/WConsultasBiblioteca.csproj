@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{420D49E7-38E9-4598-A12E-A17A84376B2C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WConsultas</RootNamespace>
+    <AssemblyName>WConsultas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WConsultas.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\scanner.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\common\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\common\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\common\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="policy.2.0.Npgsql, Version=0.0.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\common\policy.2.0.Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="ScalablePictureBox">
+      <HintPath>..\common\ScalablePictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vintasoft.Barcode">
+      <HintPath>..\common\Vintasoft.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Vintasoft.Twain">
+      <HintPath>..\common\Vintasoft.Twain.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="DocumentoCajaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentoCajaForm.Designer.cs">
+      <DependentUpon>DocumentoCajaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EntityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntityForm.Designer.cs">
+      <DependentUpon>EntityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCatalog.designer.cs">
+      <DependentUpon>FormCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfig.designer.cs">
+      <DependentUpon>FormConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\frmScanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\frmScanner.designer.cs">
+      <DependentUpon>frmScanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="identity\AutorizacionAdmin.cs" />
+    <Compile Include="identity\enumPermisos.cs" />
+    <Compile Include="identity\FileSystemEntityChecker.cs" />
+    <Compile Include="identity\IdentityChecker.cs" />
+    <Compile Include="identity\IdentityCheckerFactory.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenedores\FormCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenedores\FormCaja.Designer.cs">
+      <DependentUpon>FormCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenedores\FormCajaList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenedores\FormCajaList.Designer.cs">
+      <DependentUpon>FormCajaList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenedores\FormTipoDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenedores\FormTipoDoc.Designer.cs">
+      <DependentUpon>FormTipoDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenedores\FormTipoDocList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenedores\FormTipoDocList.Designer.cs">
+      <DependentUpon>FormTipoDocList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenedores\FormSubEntityList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenedores\FormSubEntityList.Designer.cs">
+      <DependentUpon>FormSubEntityList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenedores\FormSubdepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenedores\FormSubdepartamento.Designer.cs">
+      <DependentUpon>FormSubdepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenedores\FormEntity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenedores\FormEntity.Designer.cs">
+      <DependentUpon>FormEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenedores\FormEntityList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenedores\FormEntityList.Designer.cs">
+      <DependentUpon>FormEntityList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenedores\FormTipoDocXSubDepto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenedores\FormTipoDocXSubDepto.Designer.cs">
+      <DependentUpon>FormTipoDocXSubDepto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenedores\FormUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenedores\FormUser.Designer.cs">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenedores\FormUserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenedores\FormUserList.Designer.cs">
+      <DependentUpon>FormUserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueryForm.Designer.cs">
+      <DependentUpon>QueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="storage\FileSystemSM.cs" />
+    <Compile Include="storage\Interface1.cs" />
+    <Compile Include="storage\IStorageManager.cs" />
+    <Compile Include="storage\StorageManagerFactory.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="utils\ConfigChecker.cs" />
+    <Compile Include="utils\Status.cs" />
+    <EmbeddedResource Include="DocumentoCajaForm.resx">
+      <DependentUpon>DocumentoCajaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntityForm.resx">
+      <DependentUpon>EntityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCatalog.resx">
+      <DependentUpon>FormCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfig.resx">
+      <DependentUpon>FormConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\frmScanner.resx">
+      <DependentUpon>frmScanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenedores\FormCaja.resx">
+      <DependentUpon>FormCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenedores\FormCajaList.resx">
+      <DependentUpon>FormCajaList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenedores\FormTipoDoc.resx">
+      <DependentUpon>FormTipoDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenedores\FormTipoDocList.resx">
+      <DependentUpon>FormTipoDocList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenedores\FormSubEntityList.resx">
+      <DependentUpon>FormSubEntityList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenedores\FormSubdepartamento.resx">
+      <DependentUpon>FormSubdepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenedores\FormEntity.resx">
+      <DependentUpon>FormEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenedores\FormEntityList.resx">
+      <DependentUpon>FormEntityList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenedores\FormTipoDocXSubDepto.resx">
+      <DependentUpon>FormTipoDocXSubDepto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenedores\FormUser.resx">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenedores\FormUserList.resx">
+      <DependentUpon>FormUserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="QueryForm.resx">
+      <DependentUpon>QueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IDSoft.config.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IDSoft.users.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="log4net.config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Resources\scanner.ico" />
+    <None Include="Resources\ingreso.png" />
+    <None Include="Resources\Splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CatalogoDBLib\CatalogoDBLib.csproj">
+      <Project>{A30337BB-BE2D-4A19-8702-5DC94DE8FE0E}</Project>
+      <Name>CatalogoDBLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

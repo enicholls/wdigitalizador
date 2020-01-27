@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <Permisos>
+      <string>1</string>
+      <string>1</string>
+      <string>1</string>
+      <string>1</string>
+      <string>1</string>
+      <string>1</string>
+    </Permisos>
+    <userid>sa</userid>
+    <clave>sa</clave>
+    <tipoid>1</tipoid>
+    <nroid>1-9</nroid>
+    <nombre>Usuario Super Administrador</nombre>
+    <apellido />
+    <perfil>0</perfil>
+  </User>
+  <User>
+    <Permisos>
+      <string>1</string>
+      <string>1</string>
+      <string>1</string>
+      <string>1</string>
+      <string>1</string>
+    </Permisos>
+    <userid>Eric</userid>
+    <clave>eric</clave>
+    <tipoid>1</tipoid>
+    <nroid>1-9</nroid>
+    <nombre>Eric</nombre>
+    <apellido>Nicholls Vera Nicholls Vera Nicholls Vera Nicholls Vera</apellido>
+    <perfil>0</perfil>
+  </User>
+  <User>
+    <userid>Demo</userid>
+    <clave>Demo</clave>
+    <tipoid>1</tipoid>
+    <nroid />
+    <nombre>Demo</nombre>
+    <apellido>Demo Demo</apellido>
+    <perfil>0</perfil>
+  </User>
+  <User>
+    <Permisos>
+      <string>1</string>
+      <string>0</string>
+      <string>1</string>
+      <string>0</string>
+      <string>1</string>
+    </Permisos>
+    <userid>a</userid>
+    <clave>a</clave>
+    <tipoid>1</tipoid>
+    <nroid />
+    <nombre>a</nombre>
+    <apellido>a a a a a a a a a a a a a a a a</apellido>
+    <perfil>0</perfil>
+  </User>
+</ArrayOfUser>

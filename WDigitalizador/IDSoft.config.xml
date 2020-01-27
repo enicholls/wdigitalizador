@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <_PathTmpLocal>c:\temp\TmpLocal\reconocidos</_PathTmpLocal>
+    <_PathTmpStorage>c:\temp\Storage</_PathTmpStorage>
+    <_BaseDeDatosCon>Server=localhost;port=5432;Database=catalogo_dig;User id=eric;password=eric1961;</_BaseDeDatosCon>
+    <_DomTipoDoc>2</_DomTipoDoc>
+    <_DomReferencia>0</_DomReferencia>
+    <_saveCode>false</_saveCode>
+    <_PathArcClasificar>c:\TmpLocal\reconocidos</_PathArcClasificar>
+    <_PathToSend>c:\ToSend</_PathToSend>
+    <_PathSended>c:\Sended</_PathSended>
+    <_PathToSendNetwork>z:\ToSend</_PathToSendNetwork>
+    <_Escaner>FUJITSU fi-6240dj</_Escaner>
+    <_PixelType>Grises</_PixelType>
+    <_DPI>300</_DPI>
+    <_FinalType>PDF</_FinalType>
+    <_Contraste>5</_Contraste>
+    <_Brillo>5</_Brillo>
+    <_ContrasteDBP>5</_ContrasteDBP>
+    <_PageSize>Carta</_PageSize>
+</Config>
